@@ -27,7 +27,7 @@ async def getdata(ctx):
   twitter = (str(user_data["twitter_username"]))
   blog = (str(user_data["blog"]))
   location = (str(user_data["location"]))
-  await ctx.send(f"Bio: {bio}\nFollowers: {followers}\nFollowing: {following}\nAmount of public repos: {public}\nCompany: {company}\nID: {id}\nTwitter: {twitter}\nBlog: {blog}\nLocation: {location}\nAvatar URL: {avatar}}")
+  await ctx.send(f"Bio: {bio}\nFollowers: {followers}\nFollowing: {following}\nAmount of public repos: {public}\nCompany: {company}\nID: {id}\nTwitter: {twitter}\nBlog: {blog}\nLocation: {location}\nAvatar URL: {avatar}")
 
 
 @client.command()
