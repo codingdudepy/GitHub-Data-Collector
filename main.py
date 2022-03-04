@@ -11,7 +11,7 @@ client.remove_command('help')
 
 @client.command()
 async def help(ctx):
-  embed=discord.Embed(title="Commands",description="!getdata(gets data of a user in github)\n\n!getrepos(gets the repos of a user)\n\n!getstars(getting the stars of a repo)\n\n!gitub", color=0x000000)
+  embed=discord.Embed(title="Commands",description="!getdata(gets data of a user in github)\n\n!getrepos(gets the repos of a user)\n\n!getstars(getting the stars of a repo)\n\n!github", color=0x000000)
   await ctx.send(embed=embed)
 
 @client.command()
@@ -24,7 +24,7 @@ async def getdata(ctx):
   def check(message):
       return message.author == ctx.author and message.channel == ctx.channel
 
-  await ctx.send('Please enter the username to there github')
+  await ctx.send('Please enter the username to their github')
   title = await client.wait_for('message', check=check)
   url = f"https://api.github.com/users/{title.content}"
   user_data = requests.get(url).json()
@@ -46,15 +46,15 @@ async def getrepos(ctx):
   def check(message):
     return message.author == ctx.author and message.channel == ctx.channel
 
-  await ctx.send("Please enter the username to there github: ")
+  await ctx.send("Please enter the username to their github: ")
   title = await client.wait_for('message', check=check)
   username = f"{title.content}"
   g = Github()
+  repo_list = []
   user = g.get_user(username)
-  items = []
   for repo in user.get_repos():
-    await ctx.send(repo)
-
+    repo_list.append(repo)
+  await ctx.send(repo_list)
  
 @client.command()
 async def getstars(ctx):
