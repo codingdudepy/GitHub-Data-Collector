@@ -44,6 +44,18 @@ async def getrepos(ctx):
   for repo in user.get_repos():
     await ctx.send(repo)
 
+ 
+@client.command()
+async def getstars(ctx):
+  def check(message):
+    return message.author == ctx.author and message.channel == ctx.channel
+  await ctx.send("Please enter the username followed by the name of the repo. For exampe (Codingdude/GithubBot): ")
+  title = await client.wait_for('message', check=check)
+  g = Github()
+  repo = g.get_repo(title.content)
+  b = repo.stargazers_count
+  await ctx.send(b)
+  
    
 
 
