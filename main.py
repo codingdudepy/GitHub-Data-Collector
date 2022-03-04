@@ -7,6 +7,7 @@ from github import Github
 
 #intializing discord bot and setting prefix
 client = commands.Bot(command_prefix='!')
+client.remove_command('help')
 
 @client.command()
 async def help(ctx):
