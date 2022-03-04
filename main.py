@@ -9,6 +9,16 @@ from github import Github
 client = commands.Bot(command_prefix='!')
 
 @client.command()
+async def help(ctx):
+  embed=discord.Embed(title="Commands",description="!getdata(gets data of a user in github)\n\n!getrepos(gets the repos of a user)\n\n!getstars(getting the stars of a repo)\n\n!gitub", color=0x000000)
+  await ctx.send(embed=embed)
+
+@client.command()
+async def github(ctx):
+  embed=discord.Embed(title="Github", description="https://github.com/codingdudepy/GitHub-Bot")
+  await ctx.send(embed=embed)
+
+  @client.command()
 async def getdata(ctx):
   def check(message):
       return message.author == ctx.author and message.channel == ctx.channel
