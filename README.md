@@ -19,3 +19,12 @@ pip install PyGithub requests
 
 # Updates
 I plan to continue updating this project eventually making it into a webiste so keep your eyes peeled! If you have any suggestions feel free to contact me on twitter or submit a pr if you have code
+
+# GitHub Website
+The <a href="https://githubdatacollection.herokuapp.com/">GitHub website</a> (click here) is fairly easy to use I used heroku to deploy but you can use any hosting service you want that works with flask. However, for heroku if you want to use it install all the files in the folder. If your not using heroku you can delete the following files:
+<br>
+<ul>
+  <li>Procfile</li>
+  <li>wsgi.py</li>
+  <li>requirements.txt</li>
+</ul>
