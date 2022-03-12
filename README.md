@@ -28,3 +28,8 @@ The <a href="https://githubdatacollection.herokuapp.com/">GitHub website</a> is 
   <li>wsgi.py</li>
   <li>requirements.txt</li>
 </ul>
+
+Also please run this command to install all the modules
+```` 
+pip install -r requirements.txt
+````
